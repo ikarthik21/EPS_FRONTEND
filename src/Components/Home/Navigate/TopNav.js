@@ -2,12 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TopNavbar, Logo, MenuOptions, MenuItem } from '../../Styles/HomeStyles';
 import '../../../App.css';
+import Cookies from 'js-cookie';
+
+
+
+
 
 const TopNav = () => {
+    const token = Cookies.get('token');
+    const ClearCookies = () => {
+
+        Object.keys(Cookies.get()).forEach((cookieName) => {
+            Cookies.remove(cookieName);
+        });
+
+
+        window.location.reload();
+    };
+
+
     return (
         <div>
 
             <TopNavbar>
+
                 <Link to='/' >
                     <Logo >
                         <img src="/images/logo.png" alt="" />
@@ -30,9 +48,9 @@ const TopNav = () => {
                         </MenuItem>
                     </Link>
 
-                    <Link to='/about' >
+                    <Link to='/dashboard' >
                         <MenuItem>
-                            <li>About </li>
+                            <li> Dashboard</li>
 
                         </MenuItem>
                     </Link>
@@ -43,16 +61,30 @@ const TopNav = () => {
                         </MenuItem>
                     </Link>
 
-                    <Link to='/login' >
-
-                        <div className='login_bt'>
-                            <h3>Login</h3>
 
 
+
+                    {token ?
+                        <div className='login_bt' onClick={ClearCookies}>
+                            <h3>Logout</h3>
                         </div>
 
 
-                    </Link>
+                        :
+
+                        <Link to='/login' >
+
+
+
+                            <div className='login_bt'>
+                                <h3>Login </h3>
+                            </div>
+
+
+                        </Link>
+
+
+                    }
 
 
 

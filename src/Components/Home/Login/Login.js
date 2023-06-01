@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
-import '../../../App.css'
-import { HomeContainer, LoginBox, SignUpBox, FormItemPar, FormItem } from '../../Styles/HomeStyles'
-import { adduser, loginuser } from '../../Service/API';
+import React, { useState } from 'react';
+import '../../../App.css';
+import { HomeContainer, LoginBox, SignUpBox, FormItemPar, FormItem } from '../../Styles/HomeStyles';
+import { adduser, loginuser, dummy } from '../../Service/API';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const notyf = new Notyf({
@@ -31,13 +34,12 @@ const notyf = new Notyf({
 
 const Login = () => {
 
-
-
-
+    const navigate = useNavigate();
     const user = {
         lemail: "",
         lpassword: ""
     }
+
     const Newuser = {
         name: "",
         ilnumber: "",
@@ -45,29 +47,37 @@ const Login = () => {
         email: "",
         password: "",
         cpassword: ""
-
     }
 
 
-    const [loginDetails, setloginDetails] = useState(user);
-
+    // User Registration Details
     const [registerDetails, setregisterDetails] = useState(Newuser);
 
+    // User Login Details 
+    const [loginDetails, setloginDetails] = useState(user);
+
+    // Signup and SignIn toggle 
     const [showSignUp, setshowSignUp] = useState(false);
 
+
+    // Signup and SignIn toggle function 
     const handleBox = () => {
         return setshowSignUp(!showSignUp);
     }
+
+
+    // Login details input reading function 
+
     const readLoginInput = (e) => {
-
         setloginDetails({ ...loginDetails, [e.target.name]: e.target.value });
-
     }
+
+    // Registration  details input reading function 
     const readRegisterInput = (e) => {
-
         setregisterDetails({ ...registerDetails, [e.target.name]: e.target.value });
-
     }
+
+    // Regisration handling function 
 
     const regUser = async () => {
 
@@ -87,7 +97,6 @@ const Login = () => {
                 catch (err) {
                     console.log(err);
                     notyf.error("Error adding user", err);
-
                 }
             }
             else {
@@ -99,6 +108,10 @@ const Login = () => {
         }
     }
 
+
+
+    // Login  handling function 
+
     const handleLogin = async () => {
 
         if (loginDetails.lemail === "" || loginDetails.lpassword === "") {
@@ -109,15 +122,22 @@ const Login = () => {
             try {
                 const response = await loginuser(loginDetails);
 
+                const token = response.data.token;
+                console.log(token);
+                const expires = 1 / 24;
+                Cookies.set('token', token, { expires: expires })
+
+
+
+                navigate('/');
+                window.location.reload();
                 notyf.open({
                     type: 'info',
-                    message: response.data.message
+                    message: "Login successful"
                 });
-
-
             }
-            catch (err) {
 
+            catch (err) {
                 notyf.error("Error", err);
             }
 
@@ -129,9 +149,13 @@ const Login = () => {
 
 
 
+
     return (
         <HomeContainer>
             <img src="/images/home2.svg" alt="" className='main_img2' />
+
+
+
             {
 
                 showSignUp ?

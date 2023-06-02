@@ -30,10 +30,7 @@ const notyf = new Notyf({
 
 
 const NewCase = () => {
-
-    const [UpFiles, setUpFiles] = useState();
-
-
+ 
     const Case = {
         caseid: "",
         invid: "",

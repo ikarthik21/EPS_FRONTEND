@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@500&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@500&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -10,21 +12,21 @@
 
 body {
 
-    height: 100vh;
-    width: 100vw;
-    /*  
- background-image: linear-gradient(to left bottom, #01363e, #185057, #2e6b71, #45878b, #5ca5a5);  */
+    /* height: 100vh; */
+
+
+
 
     background-image: linear-gradient(to left bottom, #064d55, #064d55, #064d55, #064d55, #064d55, #0e535a, #16585f, #1c5e64, #2a6b6f, #37787b, #438586, #509292);
 
 }
 
-.main_img {
+/* .main_img {
     margin-top: 50px;
     height: 70vh;
     width: 50vw;
 
-}
+} */
 
 .main_img2 {
 
@@ -38,6 +40,8 @@ body {
     color: #d2ebeb;
     background-color: #f1f1f1;
     background-color: #2e3a48;
+    color: #121e2e;
+         color : #afb4b44b;
 
 }
 
@@ -119,7 +123,25 @@ body {
 .caselink {
     text-decoration: none;
     color: white;
-    border-bottom: 1px solid  white;
+    border-bottom: 1px solid white;
     padding: 0.8px;
     font-weight: bold;
 }
+
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color:  #afb4b44b;
+
+}
+
+body::-webkit-scrollbar-thumb {
+    background:#021e21;
+    border-radius: 4px;
+
+}
+
+ 

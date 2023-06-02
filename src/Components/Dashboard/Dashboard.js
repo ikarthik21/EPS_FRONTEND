@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, LeftBar, ContentBox, SearchBox } from '../Styles/Dashstyle';
+import { Container, LeftBar, ContentBox } from '../Styles/Dashstyle';
 import NewCase from './NewCase';
 import AllRecords from './AllRecords';
 import OpenCases from './OpenCases';

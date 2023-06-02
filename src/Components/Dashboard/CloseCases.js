@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ContentBox, CasesBox } from '../Styles/Dashstyle';
+import {  CasesBox } from '../Styles/Dashstyle';
 import { getRecords } from '../Service/API';
 import '../../App.css';
 

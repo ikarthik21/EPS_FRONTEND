@@ -5,6 +5,7 @@ display : flex;
 flex-direction :column;
 align-items:center;
 justify-content:center; 
+height:calc(100vh - 80px);
 margin : 10px 10px;
 
 `
@@ -108,16 +109,17 @@ input{
     min-width : 275px;
     font-size :18px;
      padding: 3px 6px;
-    color: #d2ebeb;
+     color: WHITE;
  
     letter-spacing: 2px;
     &::placeholder {
         color:  #d2ebeb;  
       }
       margin: 10px 10px;    
-      font-family: 'Montserrat', sans-serif;
       font-weight: bold;
       letter-spacing:1.5px;
+      font-family: 'Geologica', sans-serif;
+
 
 }
 
@@ -132,7 +134,7 @@ textarea{
     border-bottom : 6px solid #013b40;
     border-radius : 10px;
      color:white ;
-     font-family: 'Montserrat', sans-serif;
+     font-family: 'Geologica', sans-serif;
      font-weight: bold;
      letter-spacing:1.5px;
      resize:none;
@@ -221,6 +223,7 @@ export const SingleCaseBox = styled.div`
 margin : 50px 50px;
 background-color: #afb4b44b;
 border-radius: 10px;
+
 
 
 `

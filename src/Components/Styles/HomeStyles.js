@@ -67,9 +67,11 @@ h3{
 export const HomeContainer = styled.div`
 display: flex;
 align-items: center;
- 
+height:calc(100vh - 80px);
  img{
-   
+    margin-top: 50px;
+    height: 70vh;
+    width: 50vw;
  }
 
  

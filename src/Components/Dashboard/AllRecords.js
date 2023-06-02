@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-
-import { ContentBox, CasesBox } from '../Styles/Dashstyle';
+ 
+import {  CasesBox } from '../Styles/Dashstyle';
 import { getRecords } from '../Service/API';
 import '../../App.css';
 

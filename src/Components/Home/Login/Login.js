@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../../App.css';
 import { HomeContainer, LoginBox, SignUpBox, FormItemPar, FormItem } from '../../Styles/HomeStyles';
-import { adduser, loginuser, dummy } from '../../Service/API';
+import { adduser, loginuser } from '../../Service/API';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import Cookies from 'js-cookie';

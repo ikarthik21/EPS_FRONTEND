@@ -60,8 +60,7 @@ const Dashboard = () => {
             <LeftBar>
                 <li onClick={dispNC} > + New Case</li>
                 <li onClick={dispAR} >All Records</li>
-                <li> Investigators </li>
-                <li onClick={dispOC}> Open Cases </li>
+               <li onClick={dispOC}> Open Cases </li>
                 <li onClick={dispCC}>  Closed Cases </li>
                 <li onClick={dispSB}> Search </li>
 

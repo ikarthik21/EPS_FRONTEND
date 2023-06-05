@@ -70,26 +70,6 @@ const NewCase = () => {
 
     initializeWeb3();
 
-    // Fetch cases from the blockchain
-    // const fetchCases = async () => {
-    //   try {
-    //     const fileCount = await contract.methods.fileCount().call();
-    //     const caseList = [];
-
-    //     for (let i = 1; i <= fileCount; i++) {
-    //       const file = await contract.methods.files(i).call();
-    //       caseList.push(file);
-    //     }
-
-    //     setCases(caseList);
-    //   } catch (error) {
-    //     console.error('Error fetching cases from the blockchain:', error);
-    //   }
-    // };
-
-    // if (contract) {
-    //   fetchCases();
-    // }
 
   }, [contract]);
 

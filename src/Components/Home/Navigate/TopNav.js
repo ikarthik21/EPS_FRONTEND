@@ -72,12 +72,7 @@ const TopNav = () => {
 
                         </MenuItem>
                     </Link>
-                    <Link to='/about' >
-                        <MenuItem>
-                            <li>Contact </li>
 
-                        </MenuItem>
-                    </Link>
 
 
                     {

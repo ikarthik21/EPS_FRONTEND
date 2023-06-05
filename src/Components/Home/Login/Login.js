@@ -88,22 +88,33 @@ const Login = () => {
   // Login  handling function
 
   const handleLogin = async () => {
+
     if (loginDetails.lemail === "" || loginDetails.lpassword === "") {
       notyf.error("Please fill all the fields");
-    } else {
+    }
+     else {
       try {
         const response = await loginuser(loginDetails);
-
         const token = response.data.token;
-        console.log(token);
-        const expires = 1 / 24;
-        Cookies.set("token", token, { expires: expires });
-        navigate("/dashboard");
-        notyf.open({
-          type: "info",
-          message: "Login successful",
-        });
-        window.location.reload();
+
+        if (token) {
+          const expires = 1 / 24;
+          Cookies.set("token", token, { expires: expires });
+          navigate("/dashboard");
+          notyf.open({
+            type: "info",
+            message: "Login successful",
+          });
+          window.location.reload();
+        }
+        else {
+          notyf.open({
+            type: "error",
+            message: response.data.message,
+          });
+        }
+
+
       } catch (err) {
         notyf.error("Error", err);
       }

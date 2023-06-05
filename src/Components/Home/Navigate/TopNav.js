@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TopNavbar, Logo, MenuOptions, MenuItem } from '../../Styles/HomeStyles';
 import '../../../App.css';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import { dummy } from '../../Service/API';
-
+import jwt_decode from 'jwt-decode';
 
 
 const TopNav = () => {
     const navigate = useNavigate();
     const token = Cookies.get('token');
+    const [isAdmin, setisAdmin] = useState('');
+
+    useEffect(() => {
+
+        if (token) {
+            // Decode the JWT token to extract the user role
+            const decodedToken = jwt_decode(token);
+            const { role } = decodedToken;
+            setisAdmin(role);
+        }
+
+    }, []);
+
+
+
+
     const ClearCookies = () => {
 
         Object.keys(Cookies.get()).forEach((cookieName) => {
@@ -22,25 +38,11 @@ const TopNav = () => {
     };
 
 
-    const rundummy = async () => {
-
-        try {
-            const resp = await dummy();
-            console.log(resp);
-
-        } catch (error) {
-            console.log(error);
-        }
-      
-    }
 
     return (
         <div>
 
             <TopNavbar>
-                <button onClick={rundummy}>Click</button>
-
-
 
                 <Link to='/' >
                     <Logo >
@@ -78,6 +80,15 @@ const TopNav = () => {
                     </Link>
 
 
+                    {
+                        isAdmin === 'admin' ? <Link to='/admin' >
+                            <MenuItem>
+                                <li>Admin </li>
+
+                            </MenuItem>
+                        </Link> : ""
+
+                    }
 
 
                     {token ?

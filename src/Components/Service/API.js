@@ -80,3 +80,29 @@ export const dummy = async () => {
 
 }
 
+export const getAllusers = async () => {
+    try {
+        return axios.get(`${curr_url}/users`);
+
+    } catch (err) {
+        console.log(err);
+    }
+
+}
+
+
+export const approveUser = async (mail) => {
+    try {
+
+
+        const email = {
+            email: mail
+        }
+
+        return axios.post(`${curr_url}/approveuser`, email);
+
+    } catch (err) {
+        console.log(err);
+    }
+
+}

@@ -6,6 +6,7 @@ flex-direction :column;
 align-items:center;
 justify-content:center; 
 margin : 10px 10px;
+min-height :100vh;
 
 `
 export const LeftBar = styled.div`

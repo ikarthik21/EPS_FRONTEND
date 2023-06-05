@@ -15,7 +15,7 @@ body {
 
     /* height: 100vh; */
 
-
+min-height: 100vh;
 
 
     background-image: linear-gradient(to left bottom, #064d55, #064d55, #064d55, #064d55, #064d55, #0e535a, #16585f, #1c5e64, #2a6b6f, #37787b, #438586, #509292);
@@ -174,4 +174,20 @@ body::-webkit-scrollbar-thumb {
 .FloatRight {
     position: relative;
     left: 500px;
+}
+
+.appBtnStyle{
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 14px;
+    
+}
+.appBtnStyle:hover{
+    transform: scale(1.12,1.12);
+    transition: 1s ease-in-out transform    ;  
+    font-family: 'Poppins';
+
 }

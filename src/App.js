@@ -11,12 +11,26 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import AllRecords from './Components/Dashboard/AllRecords';
 import SingleCase from './Components/Dashboard/SingleCase';
 import Cookies from 'js-cookie';
-
+import { useEffect, useState } from 'react';
+import jwt_decode from 'jwt-decode';
+import Admin from './Components/Admin/Admin';
 
 function App() {
 
   const token = Cookies.get('token');
+  const [userRole, setUserRole] = useState('');
 
+  useEffect(() => {
+    // Get the JWT token from wherever you have it stored (e.g., local storage)
+
+    if (token) {
+      // Decode the JWT token to extract the user role
+      const decodedToken = jwt_decode(token);
+      const { role } = decodedToken;
+
+      setUserRole(role);
+    }
+  }, []);
 
 
 
@@ -32,13 +46,21 @@ function App() {
               <Route path='/allrec' element={<AllRecords />} />
               <Route path='/home' element={<SideNav />} />
               <Route exact path="/cases/:caseid" element={<SingleCase />} />
+
+              {userRole === 'admin' ?
+                <Route path='/admin' element={<Admin />} />
+
+                : <Route path='/' element={<Home />} />}
+
+
             </>
             :
             <>
 
               <Route path='/' element={<Home />} />
 
-              <Route path='/login' element={<Login />} /></>
+              <Route path='/login' element={<Login />} />
+            </>
           }
 
 

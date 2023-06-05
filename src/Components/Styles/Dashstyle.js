@@ -5,7 +5,6 @@ display : flex;
 flex-direction :column;
 align-items:center;
 justify-content:center; 
-height:calc(100vh - 80px);
 margin : 10px 10px;
 
 `
@@ -19,16 +18,12 @@ border-radius : 10px;
 
 li{
     list-style : none;
-
-    background-color : #013b42;
     background-color : #013b40;
     border-radius : 25px;
     color:white;
-
     margin : 10px 15px;
     padding : 11px 20px;
     cursor :pointer;
- 
     letter-spacing :1.5px;
     &:hover{
      transform : scale(1.05,1.05);
@@ -40,17 +35,16 @@ li{
 
 `
 export const ContentBox = styled.div`
- 
  display : flex;
 align-items:center;
 justify-content:center; 
 background-color : #afb4b44b;
 margin:25px 5px;
 border-radius : 10px;
-padding: 20px 10px;
-
-
-
+padding: 30px 10px;
+background-image: linear-gradient(to left bottom, #013339, #01343b, #01363c, #02373e, #023940, #08353f, #0f303c, #142c39, #1a212d, #1a171f, #120d11, #000000);
+flex-direction:column;
+ 
 `
 export const SearchBox = styled.div`
 margin : 10px 10px;
@@ -75,20 +69,13 @@ display : flex;
 align-items : center;
 justify-content : flex-start;
 flex-direction : column;
- 
+ img{
+  height:350px;
+  width:350px;
+ }
 
 
 `
-
-export const HorizontalFlex = styled.div`
-  
-display : flex;
-align-items : center;
-justify-content : center;
-
-
-`
-
 
 export const AddDetailsBox = styled.div`
 display : flex;
@@ -96,19 +83,28 @@ align-items : center;
 justify-content : center;
 margin : 10px 10px;
  
+label{
+      font-size :18px;
+      padding: 10px 10px;
+      color: white;
+      letter-spacing: 2px;    
+      font-weight: bold;
+      letter-spacing:1.5px;
+      font-family: 'Geologica', sans-serif;
+}
  
 
 input{
     background-color : #afb4b44b;
+    background-color : transparent;
     outline :none;
     border : none;
-    border-right : 6px solid #013b40;
-    border-bottom : 6px solid #013b40;
+     border-bottom : 2px solid white;
     border-radius : 10px;
     min-height :35px;
     min-width : 275px;
     font-size :18px;
-     padding: 3px 6px;
+     padding: 10px 10px;
      color: WHITE;
  
     letter-spacing: 2px;
@@ -128,10 +124,11 @@ textarea{
     font-size:19px;
     margin : 10px 10px;
     background-color : #afb4b44b;
+    background-color : transparent;
     outline :none;
     border : none;
-    border-right : 6px solid #013b40;
-    border-bottom : 6px solid #013b40;
+    border-bottom : 2px solid white;
+    
     border-radius : 10px;
      color:white ;
      font-family: 'Geologica', sans-serif;
@@ -143,7 +140,7 @@ textarea{
      &: :placeholder {
      color:white; 
     }
-
+text-align: justify;
 }
 
 

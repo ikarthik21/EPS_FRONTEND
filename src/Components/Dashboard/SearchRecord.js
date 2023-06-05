@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {  CasesBox, SearchBox } from '../Styles/Dashstyle';
+import { CasesBox, SearchBox } from '../Styles/Dashstyle';
 import { getRecords } from '../Service/API';
 import '../../App.css';
 
@@ -50,13 +50,13 @@ const SearchRecord = () => {
 
 
                                 {
-                                    Records.filter((record) => record.caseid.toLowerCase().startsWith(search.toLowerCase())).map((record) => (
+                                    Records.filter((record) => record.caseid.toLowerCase().contains(search.toLowerCase())).map((record) => (
                                         <tr >
-                                          <td>
-                                        <a className="caselink" rel="noreferrer" href={"/cases/" + record.caseid} target="_blank" >
-                                            {record.caseid}
-                                        </a>
-                                    </td>
+                                            <td>
+                                                <a className="caselink" rel="noreferrer" href={"/cases/" + record.caseid} target="_blank" >
+                                                    {record.caseid}
+                                                </a>
+                                            </td>
                                             <td>{record.cstatus}</td>
                                             <td>{record.invid}</td>
                                             <td>{record.cname}</td>
@@ -81,10 +81,10 @@ const SearchRecord = () => {
                                     Records.filter((record) => record.cname.toLowerCase().startsWith(searchName.toLowerCase())).map((record) => (
                                         <tr >
                                             <td>
-                                        <a className="caselink" rel="noreferrer" href={"/cases/" + record.caseid} target="_blank" >
-                                            {record.caseid}
-                                        </a>
-                                    </td>
+                                                <a className="caselink" rel="noreferrer" href={"/cases/" + record.caseid} target="_blank" >
+                                                    {record.caseid}
+                                                </a>
+                                            </td>
                                             <td>{record.cstatus}</td>
                                             <td>{record.invid}</td>
                                             <td>{record.cname}</td>

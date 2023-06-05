@@ -76,12 +76,7 @@ const Dashboard = () => {
                 {CCState ? <CloseCases /> : ""}
                 {ARState ? <AllRecords /> : ""}
                 {SBState ? <SearchRecord /> : ""}
-                {/* {SBState ? <SearchBox>
-                    <input type="text" placeholder='Case ID' />
-                    <input type="text" placeholder='Investigator ID ' />
-                    <input type="text" placeholder='Case Name' />
-                </SearchBox> : ""} */}
-
+            
 
 
             </ContentBox>

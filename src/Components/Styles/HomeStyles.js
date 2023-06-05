@@ -1,7 +1,28 @@
 import styled from 'styled-components';
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
-
-
+export const notyf = new Notyf({
+    duration: 3000,
+    position: {
+      x: 'right',
+      y: 'top',
+    },
+    types: [
+      {
+        type: 'error',
+        background: '#ef5644',
+        duration: 5000,
+        dismissible: true,
+      },
+      {
+        type: 'info',
+        background: '#00adf1',
+        duration: 5000,
+        dismissible: true,
+      },
+    ],
+  });
 
 export const TopNavbar = styled.div`
 display: flex;
@@ -11,6 +32,7 @@ padding: 0px 10px;
 a{
     text-decoration: none;
 }
+ 
  
 `
 export const MenuItem = styled.div`

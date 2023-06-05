@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
  
-import {  CasesBox } from '../Styles/Dashstyle';
+import {  CasesBox ,   NewCaseBox } from '../Styles/Dashstyle';
 import { getRecords } from '../Service/API';
 import '../../App.css';
 
@@ -21,6 +21,11 @@ const AllRecords = () => {
 
     return (
         <div className='totalFlex' >
+            <NewCaseBox>
+
+
+         
+                     <img src="/images/icon2.svg" alt="" />
             <CasesBox>
 
                 <table>
@@ -63,6 +68,7 @@ const AllRecords = () => {
 
 
             </CasesBox>
+            </NewCaseBox>
         </div>
     )
 }

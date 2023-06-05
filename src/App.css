@@ -4,6 +4,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -41,8 +42,9 @@ body {
     background-color: #f1f1f1;
     background-color: #2e3a48;
     color: #121e2e;
-         color : #afb4b44b;
+    color: #afb4b44b;
 
+    background-color: #afb4b481;
 }
 
 .spl_link {
@@ -107,7 +109,18 @@ body {
 
 .btn_st1 {
     background-color: white;
-    padding: 10px 25px;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    border-radius: 18px;
+    cursor: pointer;
+
+}
+
+.btn_st2 {
+    background-color: #0b8694;
+    padding: 10px 30px;
     border: none;
     outline: none;
     font-size: 17px;
@@ -134,14 +147,31 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    background-color:  #afb4b44b;
+    background-color: #afb4b44b;
 
 }
 
 body::-webkit-scrollbar-thumb {
-    background:#021e21;
+    background: #021e21;
     border-radius: 4px;
 
 }
 
- 
+
+
+.centerMargin {
+    margin: 15px 150px;
+}
+
+.editBtn {
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+}
+
+.FloatRight {
+    position: relative;
+    left: 500px;
+}

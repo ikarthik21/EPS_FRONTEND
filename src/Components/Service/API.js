@@ -45,12 +45,10 @@ export const addCase = async (Case) => {
     }
 
 }
-
-
-export const getRecords = async () => {
+export const editCase = async (Case) => {
     try {
 
-    return axios.get(`${curr_url}/getrec`);
+        return axios.post(`${curr_url}/editcase`, Case);
 
     } catch (err) {
         console.log(err);
@@ -58,13 +56,27 @@ export const getRecords = async () => {
 
 }
 
-// export const dummy = async () => {
-//     try {
 
-//         return axios.get(`${curr_url}/dummy`);
+export const getRecords = async () => {
+    try {
 
-//     } catch (err) {
-//         console.log(err);
-//     }
+        return axios.get(`${curr_url}/getrec`);
 
-// }
+    } catch (err) {
+        console.log(err);
+    }
+
+}
+
+export const dummy = async () => {
+    try {
+
+        return axios.get(`${curr_url}/dummy`);
+
+
+    } catch (err) {
+        console.log(err);
+    }
+
+}
+

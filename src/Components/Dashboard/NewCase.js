@@ -10,7 +10,7 @@ import Evidence from '../../build/contracts/Evidence.json';
 
 const NewCase = () => {
 
-  const [web3, setWeb3] = useState(null);
+ 
   const [contract, setContract] = useState(null);
   const [accounts, setAccounts] = useState(null);
 
@@ -44,7 +44,7 @@ const NewCase = () => {
 
           // Create a Web3 instance
           const web3Instance = new Web3(window.ethereum);
-          setWeb3(web3Instance);
+        
 
           // Get the list of accounts
           const accs = await web3Instance.eth.getAccounts();

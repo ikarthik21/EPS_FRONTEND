@@ -4,7 +4,6 @@ import { TopNavbar, Logo, MenuOptions, MenuItem } from '../../Styles/HomeStyles'
 import '../../../App.css';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
-import { dummy } from '../../Service/API';
 import jwt_decode from 'jwt-decode';
 
 
@@ -22,7 +21,7 @@ const TopNav = () => {
             setisAdmin(role);
         }
 
-    }, []);
+    }, [token]);
 
 
 

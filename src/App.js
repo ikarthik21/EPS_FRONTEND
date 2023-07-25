@@ -29,7 +29,7 @@ function App() {
 
       setUserRole(role);
     }
-  }, []);
+  }, [token]);
 
 
 
